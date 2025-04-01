@@ -10,7 +10,7 @@ applications:
           commands:
             - npm run build # Replace with your custom build command if necessary
       artifacts:
-        baseDirectory: template  # Specify the folder where index.html is located (e.g., 'template')
+        baseDirectory: templates  # Specify the folder where index.html is located (e.g., 'template')
         files:
           - '**/*'  # This will include all files inside the 'template' folder for deployment
       cache:
