@@ -1,0 +1,18 @@
+version: 1.0
+applications:
+  - appRoot: /
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - npm install    # Optional, if you're using npm for dependencies
+        build:
+          commands:
+            - npm run build # Replace with your custom build command if necessary
+      artifacts:
+        baseDirectory: template  # Specify the folder where index.html is located (e.g., 'template')
+        files:
+          - '**/*'  # This will include all files inside the 'template' folder for deployment
+      cache:
+        paths:
+          - node_modules/**/*  # Optional: caches node_modules for faster builds (if using npm)
