@@ -5,14 +5,14 @@ applications:
       phases:
         preBuild:
           commands:
-            - npm install    # Optional, if you're using npm for dependencies
+            - echo "No prebuild process"  # No pre-build steps required
         build:
           commands:
-            - npm run build # Replace with your custom build command if necessary
+            - echo "No build process required"  # Static site, no build step
       artifacts:
-        baseDirectory: templates  # Specify the folder where index.html is located (e.g., 'template')
+        baseDirectory: templates  # The folder containing your index.html and other static files
         files:
-          - '**/*'  # This will include all files inside the 'template' folder for deployment
+          - '**/*'  # Include all files from the templates folder for deployment
       cache:
         paths:
-          - node_modules/**/*  # Optional: caches node_modules for faster builds (if using npm)
+          - node_modules/**/*  # Optional, only if you're using npm dependencies (not necessary for static sites)
